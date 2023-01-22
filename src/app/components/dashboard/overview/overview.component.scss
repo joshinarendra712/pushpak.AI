@@ -1,0 +1,68 @@
+.rotate{
+	transform: rotate(90deg);
+}
+.progress{
+	width: 40px;
+	background-color: black;
+	height: 100%;
+	display: block;
+	margin-right: 20px;
+	border-radius: 20px;
+	p{
+		width: 100%;
+		margin: 0;
+	}
+	.progress1{
+		height: 19%;
+		background-color: #17a2b8;
+	}
+	.progress2{
+		height: 23%;
+		background-color: #ffc107;;
+	}
+	.progress3{
+		height: 20%;
+		background-color: #dc3545;
+	}
+	.progress4{
+		height: 18%;
+		background-color:#28a745;
+	}
+	.progress5{
+		height: 20%;
+		background-color: #007bff;
+	}
+}
+.span{
+	width: 120px;
+	display: inline-block;
+}
+.icon{
+	height: 30px;
+	width: 30px;
+	border-radius: 5px;
+	background-color: black;
+	display: inline-block;
+	margin-right: 10px;
+}
+// -blue: #007bff;
+//     --indigo: #6610f2;
+//     --purple: #6f42c1;
+//     --pink: #e83e8c;
+//     --red: #dc3545;
+//     --orange: #fd7e14;
+//     --yellow: #ffc107;
+//     --green: #28a745;
+//     --teal: #20c997;
+//     --cyan: #17a2b8;
+//     --white: #fff;
+//     --gray: #6c757d;
+//     --gray-dark: #343a40;
+//     --primary: #007bff;
+//     --secondary: #6c757d;
+//     --success: #28a745;
+//     --info: #17a2b8;
+//     --warning:
+//     --danger: #dc3545;
+//     --light: #f8f9fa;
+//     --dark: #343a40;

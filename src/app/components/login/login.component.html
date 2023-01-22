@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row center">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-body">
+					<div class="text-center"><img src="./../../../assets/images/image001.png" alt=""></div>
+					<div class="text-center">
+						<h2><strong>Sign In</strong></h2>
+					</div>
+					<mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+					<div class="example-loading-shade" *ngIf="isLoadingResults"></div>
+					<form [formGroup]="SignInform" (ngSubmit)="OnSubmitHandler()">
+						<div class="form-group">
+							<label for="username"><strong>Email*</strong></label>
+							<input type="email" name="username" formControlName="username" class="form-control"
+								id="username">
+							<ng-container
+								*ngIf="AllFormControl['username'].invalid && AllFormControl['username'].touched">
+								<span class="validators1 alert alert-danger"
+									*ngIf="AllFormControl['username'].errors?.['required']">Email is Required</span>									
+							</ng-container>
+						</div>
+						<div class="form-group pass">
+							<label for="password"><strong>Password*</strong></label>
+							<input [type]="changetype?'password': 'text'" formControlName="password" name="password"
+								id="password" class="form-control">
+							<span  *ngIf="visible" class="eyeicon" (click)="viewpass()"><i class="fa-solid fa-eye-slash" ></i></span>
+							<span *ngIf="!visible" class="eyeicon" (click)="viewpass()"><i class="fa-solid fa-eye" ></i></span>
+							<ng-container
+								*ngIf="AllFormControl['password'].invalid && AllFormControl['password'].touched">
+								<span class="validators2 alert alert-danger"
+									*ngIf="AllFormControl['password'].errors?.['required']">Password is Required</span>									
+							</ng-container>
+						</div>
+						<button class="btn btn-primary  btn-block" [disabled]="SignInform.invalid">Sign
+						In</button>
+						<div class="text-center p-3"><a routerLink="/forgotpwd">Forgort Password</a></div>
+						<div class="text-center"><span>Don't have an account </span><a href="javascript:;">SignUp</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

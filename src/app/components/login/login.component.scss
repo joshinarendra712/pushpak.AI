@@ -1,0 +1,71 @@
+.center{
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+}
+.pass{
+	position: relative;
+	width: 250;
+}
+.pass input {
+	border: 1px solid black;
+	height: 40px;
+	padding: 0 auto;
+	border-radius: 5px;
+	font-size: 15px;
+	width: 100%;
+}
+.eyeicon{
+	position: absolute;
+	right: 10px;
+	top:40px;
+	cursor: pointer;
+
+}
+input, select , textarea{
+	&.ng-invalid.ng-touched{
+		border: 3px solid red;
+	}
+}
+.validators1,.validators2{
+	position: absolute;
+	left:103%;
+	top: 40%;
+	min-width: 300px;
+	&::after{
+		content: "";
+		width: 30px;
+		height: 30px;
+		left: -8px;
+		position: absolute;
+		top: 8px;
+		background: #f8d7da;
+		transform: rotate(45deg);
+		z-index: -10;
+	}
+}
+.validators2{
+	position: absolute;
+	min-width: 300px;
+	left:107%;
+	top: 40%;
+}
+mat-spinner{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%) ;
+	z-index: 10;
+  }
+  .example-loading-shade {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 56px;
+	right: 0;
+	background: rgba(0, 0, 0, 0.15);
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }

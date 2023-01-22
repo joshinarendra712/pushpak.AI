@@ -1,0 +1,47 @@
+<div class="card py-2">
+	<div class="card-body">
+		<div>
+			<h2><strong>Latest Orders</strong></h2>
+		</div>
+		<div class="example-loading-shade" *ngIf="isLoadingResults">
+		</div>
+		<mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Id</th>
+						<th>Billing Name</th>
+						<th>Amount</th>
+						<th>Order Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let obj of data">
+						<td>{{obj.date | date}}</td>
+						<td>{{obj.id}}</td>
+						<td>{{obj.billing_name}}</td>
+						<td>${{obj.amount}}</td>
+						<td class="alert" [ngClass]="{'alert-info': obj.order_status === 'processing',
+						'alert-warning': obj.order_status ==='refund',
+						'alert-danger' : obj.order_status === 'cancelled' ,
+						'alert-success': obj.order_status === 'delivered',
+						'alert-primary': obj.order_status === 'in delivery'}">
+							{{getStatus(obj.order_status)}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="text-center">
+			<ul class="list-inline">
+				<button class="btn btn-outline-primary" [disabled]="currentpage == 1" (click)="OnPrevClick()"><i
+						class="fas fa-backward"></i></button>
+				<li class="list-inline-item mx-3"> <strong>Page No {{currentpage}}</strong></li>
+				<button class="btn btn-outline-primary" [disabled]="currentpage == LastPage" (click)="OnNextClick()"><i
+						class="fas fa-forward"></i></button>
+			</ul>
+		</div>
+	</div>
+</div>
